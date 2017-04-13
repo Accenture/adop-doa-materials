@@ -26,6 +26,9 @@
           },
           "ap-south-1": {
             "AMI": "ami-95cda6fa"
+          },
+          "ap-northeast-1":{
+            "AMI": "ami-eec1c380"
           }
         }
     },
@@ -167,7 +170,7 @@
                                 "git clone https://github.com/Accenture/adop-docker-compose\n",
 
                                 "cd /data/adop-docker-compose\n",
-                                
+
                                 "export METADATA_URL='http://169.254.169.254/latest/meta-data'\n",
                                 "export MAC_ADDRESS=$(curl -s ${METADATA_URL}/network/interfaces/macs/)\n",
                                 "export AWS_VPC_ID=$(curl -s ${METADATA_URL}/network/interfaces/macs/${MAC_ADDRESS}/vpc-id/)\n",
@@ -192,7 +195,7 @@
                                 "echo \"https://github.com/Accenture/adop-cartridge-docker.git\" >> cartridges.txt\n",
                                 "echo \"https://github.com/Accenture/adop-cartridge-doa-m7-m8.git\" >> cartridges.txt\n",
                                 "git add cartridges.txt && git commit -m \"Added DOA cartridges\" && git push origin master\n",
-                                
+
                                 "curl -X POST ${INITIAL_ADMIN_USER}:${INITIAL_ADMIN_PASSWORD_PLAIN}@${PUBLIC_IP}/jenkins/job/Platform_Management/job/Load_Cartridge_List/build --data token=$JENKINS_TOKEN\n",
                                 "curl -X POST ${INITIAL_ADMIN_USER}:${INITIAL_ADMIN_PASSWORD_PLAIN}@${PUBLIC_IP}/jenkins/job/Platform_Management/job/Setup_Gerrit/build --data token=$JENKINS_TOKEN\n",
                                 "sleep 10\n",
@@ -325,4 +328,3 @@
         }
     }
 }
-
