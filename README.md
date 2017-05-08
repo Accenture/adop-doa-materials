@@ -4,6 +4,7 @@ The DevOps Academy is a two-day training course that aims to provide a practical
 This repository contains materials and files required during the various phases of the course. It is recommended that you clone this repository to your local machine as a pre-requisite for the course.
 
 The repository contains:
+- Hello World
 - Standing Up Tools
 - Cartridge Collections
 - Platform Extension Collections
