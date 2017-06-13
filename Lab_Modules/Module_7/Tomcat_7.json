@@ -112,7 +112,7 @@
         "Tags" : [ 
           {
             "Key" : "Name",
-            "Value" : "Academy-Module7-Tomcat7",
+            "Value" : "AV-DevOps-Academy-Module7-Tomcat7",
             "PropagateAtLaunch" : "true"
           }
         ],
