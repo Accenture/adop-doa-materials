@@ -168,10 +168,10 @@
 
                                 "cd /data/adop-docker-compose\n",
                                 
-                                "export METADATA_URL='http://169.254.169.254/latest/meta-data'\n",
-                                "export MAC_ADDRESS=$(curl -s ${METADATA_URL}/network/interfaces/macs/)\n",
-                                "export AWS_VPC_ID=$(curl -s ${METADATA_URL}/network/interfaces/macs/${MAC_ADDRESS}/vpc-id/)\n",
-                                "export AWS_SUBNET_ID=$(curl -s ${METADATA_URL}/network/interfaces/macs/${MAC_ADDRESS}/subnet-id/)\n",
+                                "export METADATA_URL='http://instance-data/latest/meta-data'\n",
+                                "export MAC_ADDRESS=$(curl -s ${METADATA_URL}/mac)\n",
+                                "export AWS_VPC_ID=$(curl -s ${METADATA_URL}/network/interfaces/macs/${MAC_ADDRESS}/vpc-id)\n",
+                                "export AWS_SUBNET_ID=$(curl -s ${METADATA_URL}/network/interfaces/macs/${MAC_ADDRESS}/subnet-id)\n",
                                 "export AWS_AZ=$(curl -s ${METADATA_URL}/placement/availability-zone)\n",
                                 "export AWS_DEFAULT_REGION=${AWS_AZ%?}\n",
                                 "echo \"export AWS_VPC_ID=${AWS_VPC_ID}\" > conf/provider/env.provider.aws.sh\n",
