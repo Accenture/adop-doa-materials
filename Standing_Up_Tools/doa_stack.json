@@ -8,7 +8,7 @@
             "AMI": "ami-337be65c"
           },
           "eu-west-1": {
-            "AMI": "ami-6e28b517"
+            "AMI": "ami-005b5c720e7b986d6"
           },
           "eu-west-2": {
             "AMI": "ami-ee6a718a"
